@@ -276,31 +276,3 @@ resource "aws_cloudtrail" "data_lake_trail" {
 }
 
 
-# OUTPUTS FOR OTHER MODULES
-
-
-output "raw_bucket_name" {
-  value       = aws_s3_bucket.raw_data.bucket
-  description = "Name of the raw data bucket"
-}
-
-output "processed_bucket_name" {
-  value       = aws_s3_bucket.processed_data.bucket
-  description = "Name of the processed data bucket"
-}
-
-output "curated_bucket_name" {
-  value       = aws_s3_bucket.curated_data.bucket
-  description = "Name of the curated data bucket"
-}
-
-output "glue_database_name" {
-  value       = aws_glue_catalog_database.data_lake.name
-  description = "Name of the Glue catalog database"
-}
-
-output "kms_key_arn" {
-  value       = aws_kms_key.data_lake_key.arn
-  description = "ARN of the KMS encryption key"
-  sensitive   = true
-}
